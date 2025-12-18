@@ -17,23 +17,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Form handling - let Formspree handle submission
+// Form handling with validation
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function() {
-        // Just show loading state, let Formspree handle the rest
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
+    contactForm.addEventListener('submit', function(e) {
+        // Get form values for validation
+        const name = this.querySelector('input[name="name"]').value.trim();
+        const email = this.querySelector('input[name="_replyto"]').value.trim();
+        const message = this.querySelector('textarea[name="message"]').value.trim();
         
-        // Reset button after 5 seconds (in case of error)
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 5000);
-    });
-}
+        // Basic validation
+        if (!name || !email || !message) {
+            e.preventDefault();
+            alert('Please fill in all fields.');
+            return;
+        }
+        
         // Email validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
@@ -48,18 +47,17 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        // Add loading class for styling
+        // Add loading class for styling (if CSS exists)
         submitBtn.classList.add('loading');
         
-        // After form submits (or fails), reset button
+        // Reset button after 5 seconds (in case of error)
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
-        }, 5000); // Reset after 5 seconds
+        }, 5000);
         
-        // Form will now submit to Formspree
-        // Formspree will handle the actual email sending
+        // Form will submit to Formspree after validation passes
     });
 }
 
@@ -95,16 +93,3 @@ window.addEventListener('scroll', () => {
         nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
     }
 });
-
-// Show success message if redirected from Formspree
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-        alert('Thank you! Your message has been sent successfully. I\'ll get back to you soon.');
-    }
-    
-    if (urlParams.get('error') === 'true') {
-        alert('Sorry, there was an error sending your message. Please try again or email me directly.');
-    }
-});
-
