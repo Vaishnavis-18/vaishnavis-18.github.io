@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Sent | Vaishnavi's Portfolio</title>
+    
+    <!-- ⚠️ CRITICAL FIX: Detect Formspree page and redirect -->
+    <script>
+        // If we're on Formspree's page, redirect IMMEDIATELY to our custom page
+        if(window.location.hostname.includes('formspree.io')) {
+            window.location.href = 'https://vaishnavis-18.github.io/success.html';
+        }
+        
+        // Also check for Formspree text in page
+        document.addEventListener('DOMContentLoaded', function() {
+            const bodyText = document.body.innerText;
+            if(bodyText.includes('Formspree') || bodyText.includes('You are using')) {
+                window.location.href = 'https://vaishnavis-18.github.io/success.html';
+            }
+        });
+    </script>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
