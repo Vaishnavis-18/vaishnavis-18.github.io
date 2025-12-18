@@ -17,35 +17,63 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Form Submission (Basic)
+// Form Handling for Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
         
-        // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const message = this.querySelector('textarea').value;
+        // Add loading class for styling
+        submitBtn.classList.add('loading');
         
-        // Basic validation
+        // Validate form before submitting
+        const name = this.querySelector('input[name="name"]').value;
+        const email = this.querySelector('input[name="_replyto"]').value;
+        const message = this.querySelector('textarea[name="message"]').value;
+        
         if (!name || !email || !message) {
+            e.preventDefault();
             alert('Please fill in all fields.');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
             return;
         }
         
-        // In a real application, you would send this data to a server
-        // For now, just show a success message
-        alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
+        // Validate email format
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            return;
+        }
         
-        // Reset form
-        this.reset();
+        // Form is valid, let Formspree handle the submission
+        // Reset button after 8 seconds (in case of network issues)
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+        }, 8000);
+        
+        // Optional: Add success message after form redirects back
+        // Formspree will handle the actual email sending
     });
 }
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        // Don't prevent default for links that don't have href="#"
+        if (this.getAttribute('href') === '#') return;
+        
         e.preventDefault();
         
         const targetId = this.getAttribute('href');
@@ -64,9 +92,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll effect to navbar
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
-    }
-});
+    if (
