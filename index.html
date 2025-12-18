@@ -6,648 +6,8 @@
     <title>Vaishnavi Senthilkumar | AIML Student</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #2563eb;
-            --secondary: #7c3aed;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        header {
-            background-color: white;
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--secondary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-            background-color: rgba(37, 99, 235, 0.1);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 150px 0 100px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .greeting {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-        }
-
-        .name-line1 {
-            display: block;
-            color: var(--dark);
-        }
-
-        .name-line2 {
-            display: block;
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        .hero h2 {
-            font-size: 1.8rem;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-            border: 2px solid var(--primary);
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(37, 99, 235, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid white;
-            box-shadow: var(--shadow);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .personal-info {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .info-item {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: var(--dark);
-            min-width: 100px;
-        }
-
-        .info-value {
-            color: var(--gray);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(37, 99, 235, 0.1);
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 0.5rem 0;
-            color: var(--gray);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .skill-list li:before {
-            content: "•";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Projects Section */
-        .project-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            background: none;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-status {
-            padding: 0.5rem 1rem;
-            background-color: var(--primary);
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            border-radius: 4px;
-        }
-
-        .coming-soon {
-            background-color: var(--secondary);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .project-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background-color: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Certificates Section */
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .certificate-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .certificate-card h3 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .certificate-card p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-info h3 {
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(37, 99, 235, 0.1);
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(37, 99, 235, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-        }
-
-        .contact-details h4 {
-            color: var(--dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-details p {
-            color: var(--gray);
-        }
-
-        .contact-form {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .footer-logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        .footer-text {
-            color: #cbd5e1;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .tech-stack {
-            color: #cbd5e1;
-            margin-bottom: 2rem;
-        }
-
-        .preparation {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .preparation h4 {
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-
-        .preparation p {
-            color: #cbd5e1;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-            
-            .profile-img {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .buttons {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-        }
+        /* CSS code from above goes here */
+        /* Copy and paste the entire CSS code here */
     </style>
 </head>
 <body>
@@ -751,7 +111,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section" style="background-color: #f0f9ff;">
+    <section id="skills" class="section skills-section">
         <div class="container">
             <div class="section-title">
                 <h2>My Skills</h2>
@@ -842,7 +202,7 @@
                             <span class="tech-tag">GitHub Pages</span>
                         </div>
                         
-                        <a href="#" class="btn btn-primary">
+                        <a href="#" class="project-link">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
@@ -883,7 +243,7 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="section" style="background-color: #f0f9ff;">
+    <section id="certificates" class="section certificates-section">
         <div class="container">
             <div class="section-title">
                 <h2>My Certificates</h2>
@@ -894,38 +254,42 @@
                 <div class="certificate-card">
                     <h3>Crash Course on Python</h3>
                     <p>Google (Coursera) | 2024</p>
-                    <div style="margin: 2rem 0;">
-                        <i class="fas fa-certificate" style="font-size: 3rem; color: var(--primary);"></i>
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-eye"></i> View
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Download
-                    </a>
+                    <div class="cert-buttons">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="certificate-card">
                     <h3>Hackathon Participation</h3>
                     <p>College Level | 2024</p>
-                    <div style="margin: 2rem 0;">
-                        <i class="fas fa-trophy" style="font-size: 3rem; color: var(--primary);"></i>
+                    <div class="cert-icon">
+                        <i class="fas fa-trophy"></i>
                     </div>
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-eye"></i> View
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Download
-                    </a>
+                    <div class="cert-buttons">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="certificate-card">
                     <h3>More Certificates Coming Soon!</h3>
                     <p>Continuously learning and adding new certifications</p>
-                    <div style="margin: 2rem 0;">
-                        <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--primary);"></i>
+                    <div class="cert-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <p style="font-style: italic; color: var(--gray);">
+                    <p style="font-style: italic; color: var(--gray); margin-top: 1rem;">
                         Stay tuned for more achievements!
                     </p>
                 </div>
@@ -985,14 +349,14 @@
                         </div>
                     </div>
                     
-                    <div class="preparation" style="margin-top: 2rem; padding: 1rem; background-color: rgba(37, 99, 235, 0.1); border-radius: 8px;">
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Preparing for Google Associate Software Developer Intern 2026</h4>
-                        <p style="color: var(--gray); font-size: 0.9rem;">Aspiring to secure an internship at Google for Summer 2026</p>
+                    <div class="prep-note">
+                        <h4>Preparing for Google Associate Software Developer Intern 2026</h4>
+                        <p>Aspiring to secure an internship at Google for Summer 2026</p>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <h3 style="margin-bottom: 1.5rem;">Send me a message</h3>
+                    <h3>Send me a message</h3>
                     
                     <form id="contactForm">
                         <div class="form-group">
@@ -1015,10 +379,10 @@
                         </button>
                     </form>
                     
-                    <div style="margin-top: 2rem; padding: 1rem; background-color: #f8fafc; border-radius: 8px; border-left: 4px solid var(--primary);">
-                        <p style="color: var(--gray); font-size: 0.9rem;">
-                            <i class="fas fa-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                            Or email directly: vaishnavisenthilkumar006@gmail.com
+                    <div class="alt-email">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            Or email directly: <a href="mailto:vaishnavisenthilkumar006@gmail.com">vaishnavisenthilkumar006@gmail.com</a>
                         </p>
                     </div>
                 </div>
@@ -1030,14 +394,12 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">TAU</div>
-                
-                <p class="footer-text">
+                <div class="footer-text">
                     © 2024 Vaishnavi Senthilkumar. All Rights Reserved.
-                </p>
+                </div>
                 
                 <p class="tech-stack">
-                    Built with <i class="fas fa-heart" style="color: #f87171;"></i> using 
+                    Built with <i class="fas fa-heart heart"></i> using 
                     <strong>HTML, CSS & JavaScript</strong> | Deployed on <strong>GitHub Pages</strong>
                 </p>
                 
