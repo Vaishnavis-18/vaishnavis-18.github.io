@@ -43,7 +43,7 @@
                     <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
                 </div>
                 <div class="social">
-                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-likedin"></i></a>                    
+                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>                    
                     <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
                     <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -190,10 +190,6 @@
                         <a href="https://vaishnavis-18.github.io" target="_blank" class="project-link">
                             <i class="fas fa-external-link-alt"></i>
                             Live Demo
-                        </a>
-                        <a href="#" class="project-link secondary">
-                            <i class="fab fa-github"></i>
-                            View Code
                         </a>
                     </div>
                 </div>
@@ -548,10 +544,48 @@
             color: white;
             cursor: not-allowed;
             border: none;
+            width: 100%;
         }
         
         .project-link.disabled i {
             margin-right: 8px;
+        }
+        
+        /* Updated Project Links - Single Button Layout */
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .project-link {
+            flex: 1;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card.portfolio .project-link {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .project-card.portfolio .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
         }
         
         /* Responsive Design for Filter Buttons */
