@@ -17,22 +17,23 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Form handling for Formspree
+// Form handling - let Formspree handle submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        // Get form values for validation
-        const name = this.querySelector('input[name="name"]').value.trim();
-        const email = this.querySelector('input[name="_replyto"]').value.trim();
-        const message = this.querySelector('textarea[name="message"]').value.trim();
+    contactForm.addEventListener('submit', function() {
+        // Just show loading state, let Formspree handle the rest
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
         
-        // Basic validation
-        if (!name || !email || !message) {
-            e.preventDefault();
-            alert('Please fill in all fields.');
-            return;
-        }
-        
+        // Reset button after 5 seconds (in case of error)
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 5000);
+    });
+}
         // Email validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
@@ -106,3 +107,4 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Sorry, there was an error sending your message. Please try again or email me directly.');
     }
 });
+
