@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Sent | Vaishnavi's Portfolio</title>
     
-    <!-- CRITICAL: Detect and redirect from Formspree page -->
+    <!-- ⚠️ CRITICAL FIX: Detect Formspree page and redirect -->
     <script>
-        // Method 1: Check URL
+        // If we're on Formspree's page, redirect IMMEDIATELY to our custom page
         if(window.location.hostname.includes('formspree.io')) {
             window.location.href = 'https://vaishnavis-18.github.io/success.html';
         }
         
-        // Method 2: Check page content
+        // Also check for Formspree text in page
         document.addEventListener('DOMContentLoaded', function() {
-            const bodyText = document.body.innerText || '';
+            const bodyText = document.body.innerText;
             if(bodyText.includes('Formspree') || bodyText.includes('You are using')) {
                 window.location.href = 'https://vaishnavis-18.github.io/success.html';
             }
@@ -82,7 +82,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation (Same as main site) -->
     <nav>
         <div class="container">
             <a href="https://vaishnavis-18.github.io" class="logo">Vaishnavi<span>S</span></a>
@@ -119,6 +119,12 @@
                 window.location.href = 'https://vaishnavis-18.github.io';
             }
         }, 1000);
+        
+        // Optional: Allow user to cancel redirect by clicking
+        countdownElement.addEventListener('click', () => {
+            clearInterval(countdown);
+            countdownElement.innerHTML = 'Redirect cancelled';
+        });
     </script>
 </body>
 </html>
