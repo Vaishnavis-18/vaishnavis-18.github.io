@@ -3,107 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnavi Senthilkumar | AIML Student</title>
+    <title>Vaishnavi S | AIML Student & Developer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* CSS code from above goes here */
-        /* Copy and paste the entire CSS code here */
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Vaishnavi Senthilkumar - AIML Student at Bannari Amman Institute of Technology. Passionate about AI, Web Development & Problem Solving.">
+    <meta name="keywords" content="AIML Student, Web Developer, Python, Portfolio, Google Internship">
+    <meta name="author" content="Vaishnavi Senthilkumar">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">Vaishnavi<span>S</span></a>
-                
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+            <a href="#" class="logo">Vaishnavi<span>S</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-btn" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <p class="greeting">Hi, I'm</p>
-                    <h1>
-                        <span class="name-line1">Vaishnavi</span>
-                        <span class="name-line2">Senthilkumar</span>
-                    </h1>
-                    <h2>AIML Student & Aspiring Developer</h2>
-                    <p class="description">
-                        B.Tech 2nd Year at <strong>Bannari Amman Institute of Technology</strong> | 
-                        Passionate about <strong>AI, Web Development & Problem Solving</strong>
-                    </p>
-                    
-                    <div class="buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-briefcase"></i> View My Work
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> Contact Me
-                        </a>
-                    </div>
+                <h1>Hi, I'm <span class="highlight">Vaishnavi Senthilkumar</span></h1>
+                <h2>AIML Student & Aspiring Developer</h2>
+                <p>B.Tech 2nd Year at Bannari Amman Institute of Technology | Passionate about AI, Web Development & Problem Solving</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn"><i class="fas fa-code"></i> View My Work</a>
+                    <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
                 </div>
-                
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                         alt="Vaishnavi Senthilkumar" class="profile-img">
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>                    
+                    <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
                 </div>
+            </div>
+            <div class="hero-image">
+                <img src="my-photo.png" alt="Vaishnavi Senthilkumar - AIML Student" loading="lazy">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Get to know more about me, my background, and my goals</p>
-            </div>
-            
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Hello! I'm Vaishnavi</h3>
                     <p>I'm a passionate 2nd-year B.Tech student specializing in Artificial Intelligence and Machine Learning at Bannari Amman Institute of Technology. I'm enthusiastic about technology, problem-solving, and creating impactful projects.</p>
                     <p>Currently, I'm building my skills in Python, Web Development, and Data Structures. I believe in continuous learning and growth.</p>
                     <p><strong>Goal:</strong> To become a proficient AI developer and contribute to innovative tech solutions at companies like Google.</p>
-                    
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
+                    <a href="Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
                 </div>
-                
-                <div class="personal-info">
+                <div class="about-info">
                     <div class="info-item">
-                        <span class="info-label">Name:</span>
-                        <span class="info-value">Vaishnavi Senthilkumar</span>
+                        <span>Name:</span>
+                        <p>Vaishnavi Senthilkumar</p>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">Email:</span>
-                        <span class="info-value">vaishnavisenthilkumar006@gmail.com</span>
+                        <span>Email:</span>
+                        <p>vaishnavisenthilkumar006@gmail.com</p>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">Phone:</span>
-                        <span class="info-value">7010244595</span>
+                        <span>Phone:</span>
+                        <p>7010244595</p>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">Education:</span>
-                        <span class="info-value">B.Tech – Artificial Intelligence and Machine Learning (2024–2028)<br>
-                        Bannari Amman Institute Of Technology</span>
+                        <span>Education:</span>
+                        <p>
+                            <strong>B.Tech – Artificial Intelligence and Machine Learning (2024–2028)</strong><br>
+                            Bannari Amman Institute Of Technology
+                        </p>
+                    </div>
+                    <div class="info-item">
+                        <span>Portfolio:</span>
+                        <p><a href="https://vaishnavis-18.github.io" target="_blank" class="portfolio-link">vaishnavis-18.github.io</a></p>
                     </div>
                 </div>
             </div>
@@ -111,89 +96,87 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
+    <section id="skills" class="skills">
         <div class="container">
-            <div class="section-title">
-                <h2>My Skills</h2>
-                <p>Technologies and tools I work with</p>
-            </div>
-            
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
                     <h3>Programming</h3>
-                    <ul class="skill-list">
-                        <li>C</li>
-                        <li>Python</li>
-                        <li>Basic Java</li>
-                    </ul>
+                    <p>C, Python, Basic Java</p>
                 </div>
-                
-                <div class="skill-category">
+                <div class="skill-card">
+                    <i class="fas fa-laptop-code"></i>
                     <h3>Web Development</h3>
-                    <ul class="skill-list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript (learning)</li>
-                    </ul>
+                    <p>HTML, CSS, JavaScript (Learning)</p>
                 </div>
-                
-                <div class="skill-category">
+                <div class="skill-card">
+                    <i class="fas fa-tools"></i>
                     <h3>Tools & Platforms</h3>
-                    <ul class="skill-list">
-                        <li>VS Code</li>
-                        <li>Git/GitHub</li>
-                        <li>Google Colab</li>
-                    </ul>
+                    <p>VS Code, Git/GitHub, Google Colab</p>
                 </div>
-                
-                <div class="skill-category">
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
                     <h3>AI/ML Foundation</h3>
-                    <ul class="skill-list">
-                        <li>Python for AI</li>
-                    </ul>
+                    <p>Python for AI</p>
                 </div>
-                
-                <div class="skill-category">
+                <div class="skill-card">
+                    <i class="fas fa-users"></i>
                     <h3>Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li>Problem-solving</li>
-                        <li>Teamwork</li>
-                        <li>Adaptability</li>
-                    </ul>
+                    <p>Problem-solving, Teamwork, Adaptability</p>
                 </div>
-                
-                <div class="skill-category">
+                <div class="skill-card">
+                    <i class="fas fa-language"></i>
                     <h3>Languages</h3>
-                    <ul class="skill-list">
-                        <li>Tamil (Native)</li>
-                        <li>English</li>
-                    </ul>
+                    <p>Tamil (Native), English</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Projects</h2>
-                <p>Showcasing my development work across different technologies</p>
-            </div>
+   <!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+            <p class="section-subtitle">Showcasing my development work across different technologies</p>
             
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
-                <button class="filter-btn" data-filter="coming-soon">Coming Soon</button>
+            <!-- Status Filter with Theme Colors -->
+            <div class="status-filter">
+                <button class="status-btn active all-theme" data-status="all">
+                    <i class="fas fa-layer-group"></i> All Projects
+                </button>
+                <button class="status-btn completed-theme" data-status="completed">
+                    <span class="status-dot completed"></span>
+                    Completed
+                </button>
+                <button class="status-btn coming-soon-theme" data-status="coming-soon">
+                    <span class="status-dot coming-soon"></span>
+                    Coming Soon
+                </button>
             </div>
-            
-            <div class="projects-grid">
-                <div class="project-card" data-category="completed">
-                    <span class="project-status">Completed</span>
-                    <div class="project-content">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile-responsive design.</p>
-                        
+        </div>
+
+        <div class="projects-grid">
+            <!-- Personal Portfolio Website - COMPLETED -->
+            <div class="project-card portfolio" data-status="completed">
+                <div class="project-header">
+                    <div class="project-badge completed">
+                        <i class="fas fa-check-circle"></i>
+                        Completed
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <h3 class="project-title">Personal Portfolio Website</h3>
+                    <p class="project-description">
+                        A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile–responsive design.
+                    </p>
+                    
+                    <div class="tech-used">
                         <div class="tech-tags">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
@@ -201,190 +184,173 @@
                             <span class="tech-tag">Git</span>
                             <span class="tech-tag">GitHub Pages</span>
                         </div>
-                        
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://vaishnavis-18.github.io" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
                         </a>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="coming-soon">
-                    <span class="project-status coming-soon">Coming Soon</span>
-                    <div class="project-content">
-                        <h3>Full Stack Web Application</h3>
-                        <p>An innovative full-stack application currently under development. This project will showcase modern web development practices with a complete frontend and backend implementation.</p>
-                        
-                        <div class="tech-tags">
-                            <span class="tech-tag">In Development</span>
-                            <span class="tech-tag">Stay tuned for updates</span>
-                        </div>
-                        
-                        <p style="font-style: italic; color: var(--secondary); margin-top: 1rem;">
-                            Coming Soon
-                        </p>
+                <!-- Corner Decoration -->
+                <div class="corner-accent"></div>
+            </div>
+
+            <!-- Full Stack Web Application - COMING SOON -->
+            <div class="project-card fullstack coming-soon" data-status="coming-soon">
+                <div class="project-header">
+                    <div class="project-badge coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-layer-group"></i>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="coming-soon">
-                    <span class="project-status coming-soon">Coming Soon</span>
-                    <div class="project-content">
-                        <h3>More Projects Coming Soon!</h3>
-                        <p>Stay tuned for more exciting projects and developments in AI/ML and web development.</p>
-                        
-                        <div class="tech-tags">
-                            <span class="tech-tag">AI/ML</span>
-                            <span class="tech-tag">Web Development</span>
-                            <span class="tech-tag">Innovation</span>
+                <div class="project-content">
+                    <h3 class="project-title">Full Stack Web Application</h3>
+                    <p class="project-description">
+                        An innovative full-stack application currently under development. This project will showcase modern web development practices with a complete frontend and backend implementation.
+                    </p>
+                    
+                    <!-- Coming Soon Status -->
+                    <div class="coming-soon-status">
+                        <div class="status-content">
+                            <i class="fas fa-tools"></i>
+                            <div class="status-text">
+                                <span class="status-title">In Development</span>
+                                <span class="status-subtitle">Stay tuned for updates</span>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="project-links">
+                        <button class="project-link disabled" disabled>
+                            <i class="fas fa-hourglass-half"></i>
+                            Coming Soon
+                        </button>
+                    </div>
                 </div>
+                
+                <!-- Overlay for coming soon -->
+                <div class="coming-soon-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Project Launching Soon</h4>
+                        <p>Exciting full-stack application coming soon!</p>
+                    </div>
+                </div>
+                
+                <!-- Corner Decoration -->
+                <div class="corner-accent"></div>
             </div>
         </div>
-    </section>
+        
+        <!-- More Projects Box with Theme Color -->
+        <div class="more-projects-box">
+            <div class="more-projects-content">
+                <i class="fas fa-sparkles"></i>
+                <h3>More Projects Coming Soon!</h3>
+                <p>Stay tuned for more exciting projects and developments.</p>
+                <div class="more-projects-wave"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="section certificates-section">
+    <section id="certificates" class="certificates">
         <div class="container">
-            <div class="section-title">
-                <h2>My Certificates</h2>
-                <p>Certifications and achievements in my learning journey</p>
-            </div>
-            
-            <div class="certificates-grid">
-                <div class="certificate-card">
+            <h2 class="section-title">My <span class="highlight">Certificates</span></h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
                     <h3>Crash Course on Python</h3>
                     <p>Google (Coursera) | 2024</p>
-                    <div class="cert-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="cert-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
+                    <div class="cert-actions">
+                        <a href="python-google-certificate.jpg" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                        <a href="python-google-certificate.jpg" download class="btn-small"><i class="fas fa-download"></i> Download</a>
                     </div>
                 </div>
-                
-                <div class="certificate-card">
-                    <h3>Hackathon Participation</h3>
-                    <p>College Level | 2024</p>
+                <div class="cert-card">
                     <div class="cert-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <div class="cert-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
+                    <h3>Hackathon Participation</h3>
+                    <p>College Level | 2024</p>
+                    <div class="cert-actions">
+                        <a href="hackathon-certificate.jpg" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                        <a href="hackathon-certificate.jpg" download class="btn-small"><i class="fas fa-download"></i> Download</a>
                     </div>
-                </div>
-                
-                <div class="certificate-card">
-                    <h3>More Certificates Coming Soon!</h3>
-                    <p>Continuously learning and adding new certifications</p>
-                    <div class="cert-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <p style="font-style: italic; color: var(--gray); margin-top: 1rem;">
-                        Stay tuned for more achievements!
-                    </p>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations or just a friendly hello</p>
-            </div>
-            
-            <div class="contact-container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
                             <p>vaishnavisenthilkumar006@gmail.com</p>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
                             <p>7010244595</p>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
                             <p>Bannari Amman Institute of Technology, Tamil Nadu</p>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h3>Portfolio</h3>
+                            <p><a href="https://vaishnavis-18.github.io" target="_blank" class="portfolio-link">vaishnavis-18.github.io</a></p>
                         </div>
-                        <div class="contact-details">
-                            <h4>Portfolio</h4>
-                            <p>vaishnavis-18.github.io</p>
-                        </div>
-                    </div>
-                    
-                    <div class="prep-note">
-                        <h4>Preparing for Google Associate Software Developer Intern 2026</h4>
-                        <p>Aspiring to secure an internship at Google for Summer 2026</p>
                     </div>
                 </div>
-                
                 <div class="contact-form">
-                    <h3>Send me a message</h3>
-                    
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
+                    <!-- Formspree Form -->
+                    <form action="https://formspree.io/f/xykggand" method="POST" id="contactForm">
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+                        <input type="email" name="_replyto" placeholder="Your Email" required aria-label="Your Email">
+                        <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
                         
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
+                        <!-- Honeypot field to prevent spam -->
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                         
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
-                        </div>
+                        <!-- Redirect after success -->
+                        <input type="hidden" name="_next" value="https://vaishnavis-18.github.io/success.html">
                         
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
+                        <!-- Confirmation message -->
+                        <input type="hidden" name="_subject" value="New Portfolio Message: Contact Form">
+                        
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                     
-                    <div class="alt-email">
-                        <p>
-                            <i class="fas fa-envelope"></i>
-                            Or email directly: <a href="mailto:vaishnavisenthilkumar006@gmail.com">vaishnavisenthilkumar006@gmail.com</a>
-                        </p>
-                    </div>
+                    <!-- Alternative contact note -->
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                        <i class="fas fa-envelope"></i>
+                        Or email directly: <a href="mailto:vaishnavisenthilkumar006@gmail.com">vaishnavisenthilkumar006@gmail.com</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -393,129 +359,374 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    © 2024 Vaishnavi Senthilkumar. All Rights Reserved.
-                </div>
-                
-                <p class="tech-stack">
-                    Built with <i class="fas fa-heart heart"></i> using 
-                    <strong>HTML, CSS & JavaScript</strong> | Deployed on <strong>GitHub Pages</strong>
-                </p>
-                
-                <div class="preparation">
-                    <h4>Preparing for Google Associate Software Developer Intern 2026</h4>
-                    <p>Aspiring to secure an internship at Google for Summer 2026</p>
-                </div>
+            <p>&copy; 2024 Vaishnavi Senthilkumar. All Rights Reserved.</p>
+            <p>Built with ❤️ using HTML, CSS & JavaScript | Deployed on GitHub Pages</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            
-            <div class="copyright">
-                <p>Vaishnavi Senthilkumar | AIML Student & Aspiring Developer</p>
-            </div>
+            <p class="footer-note">Preparing for Google Associate Software Developer Intern 2026</p>
         </div>
     </footer>
 
+    <!-- Add CSS for new elements -->
+    <style>
+        /* Theme Colors for Filter Buttons */
+        .status-btn {
+            padding: 10px 25px;
+            border: 2px solid transparent;
+            background: white;
+            color: #4a5568;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-btn.active {
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .all-theme {
+            border-color: #6c63ff;
+            color: #6c63ff;
+        }
+        
+        .all-theme.active {
+            background: linear-gradient(135deg, #6c63ff, #4a44c6);
+        }
+        
+        .completed-theme {
+            border-color: #10b981;
+            color: #10b981;
+        }
+        
+        .completed-theme.active {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .coming-soon-theme {
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+        
+        .coming-soon-theme.active {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .status-btn:hover:not(.active) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .status-dot.completed {
+            background: #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+        
+        .status-dot.coming-soon {
+            background: #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+        
+        /* Coming Soon Status Box */
+        .coming-soon-status {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        
+        .status-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .status-content i {
+            font-size: 1.8rem;
+            color: #f59e0b;
+        }
+        
+        .status-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .status-title {
+            font-weight: 600;
+            color: #2a2a3c;
+            font-size: 1.1rem;
+        }
+        
+        .status-subtitle {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        /* More Projects Box with Theme Color */
+        .more-projects-box {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(74, 68, 198, 0.05));
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .more-projects-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .more-projects-content i {
+            font-size: 3rem;
+            color: #6c63ff;
+            margin-bottom: 20px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        .more-projects-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2a2a3c;
+        }
+        
+        .more-projects-content p {
+            color: #6c757d;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .more-projects-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(90deg, transparent, #6c63ff, transparent);
+            opacity: 0.3;
+            animation: wave 3s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        /* Updated Coming Soon Button */
+        .project-link.disabled {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            cursor: not-allowed;
+            border: none;
+            width: 100%;
+        }
+        
+        .project-link.disabled i {
+            margin-right: 8px;
+        }
+        
+        /* Updated Project Links - Single Button Layout */
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .project-link {
+            flex: 1;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card.portfolio .project-link {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .project-card.portfolio .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        /* Responsive Design for Filter Buttons */
+        @media (max-width: 768px) {
+            .status-filter {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .status-btn {
+                width: 200px;
+                justify-content: center;
+            }
+            
+            .more-projects-box {
+                padding: 30px 20px;
+            }
+            
+            .more-projects-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- Add this script for interactive features -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Smooth Scrolling for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    // Close mobile menu if open
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation Toggle
+            const menuBtn = document.querySelector('.menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuBtn) {
+                menuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuBtn.innerHTML = navLinks.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
             });
-        });
-        
-        // Project Filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const filter = button.getAttribute('data-filter');
-                
-                // Filter projects
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
+
+            // Project Status Filter
+            const statusBtns = document.querySelectorAll('.status-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            statusBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    statusBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const status = this.dataset.status;
+                    
+                    // Show/hide projects based on status
+                    projectCards.forEach(card => {
+                        if (status === 'all' || card.dataset.status === status) {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeIn 0.5s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
                     }
                 });
             });
-        });
-        
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Simple validation
-            if (name && email && message) {
-                // Show success message
-                alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
+
+            // Add animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
                 
-                // Reset form
-                contactForm.reset();
-            } else {
-                alert('Please fill in all fields.');
+                .portfolio-link {
+                    color: #6366f1;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+                }
+                
+                .portfolio-link:hover {
+                    color: #4a44c6;
+                    text-decoration: underline;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    submitBtn.classList.add('loading');
+                    submitBtn.innerHTML = '';
+                    
+                    // Form will be submitted to Formspree
+                    // Success/error handling is done by Formspree redirect
+                });
             }
         });
-        
-        // Active Navigation Link on Scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
+
+        // Add scroll effect for navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                nav.style.backdropFilter = 'blur(10px)';
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+                nav.style.backdropFilter = 'none';
+                nav.style.backgroundColor = 'white';
+            }
         });
     </script>
 </body>
