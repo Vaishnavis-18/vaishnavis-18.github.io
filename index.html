@@ -144,11 +144,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
         }
 
         .profile-img {
-            width: 350px;
-            height: 350px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 8px solid rgba(56, 189, 248, 0.2);
@@ -237,12 +244,125 @@
             transform: translateY(-5px);
         }
 
+        /* Contact Box Section */
+        .contact-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #334155;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(192, 132, 252, 0.05));
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-box h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #38bdf8;
+            position: relative;
+        }
+
+        .contact-box h3::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #c084fc);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 20px;
+            background-color: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            border-left: 4px solid #38bdf8;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .connect-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            background: linear-gradient(90deg, #38bdf8, #c084fc);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .connect-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .connect-btn i {
+            margin-left: 8px;
+        }
+
         /* Footer Styles */
         footer {
             background-color: #1e293b;
             border-top: 1px solid #334155;
             padding: 40px 0 20px;
-            margin-top: auto;
+            margin-top: 80px;
         }
 
         .footer-content {
@@ -376,6 +496,10 @@
             h1 {
                 font-size: 3rem;
             }
+            
+            .contact-box {
+                max-width: 90%;
+            }
         }
 
         @media (max-width: 768px) {
@@ -407,7 +531,7 @@
                 font-size: 1.5rem;
             }
             
-            .profile-img {
+            .profile-img-container {
                 width: 280px;
                 height: 280px;
             }
@@ -431,6 +555,10 @@
             .copyright, .tech-stack, .deploy-info {
                 font-size: 0.95rem;
             }
+            
+            .contact-box h3 {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -438,7 +566,7 @@
                 font-size: 2.2rem;
             }
             
-            .profile-img {
+            .profile-img-container {
                 width: 250px;
                 height: 250px;
             }
@@ -463,6 +591,26 @@
             .tech-stack {
                 flex-direction: column;
                 gap: 5px;
+            }
+            
+            .contact-box {
+                padding: 25px 20px;
+            }
+            
+            .contact-box h3 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 20px 15px;
+            }
+            
+            .connect-btn {
+                padding: 14px;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -512,8 +660,45 @@
             </div>
             
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                     alt="Vaishnavi Senthilkumar" class="profile-img">
+                <div class="profile-img-container">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Vaishnavi Senthilkumar" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Box Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <h3>Get In Touch</h3>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">vaishnavisenthilkumar006@gmail.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">7010244595</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#connect" class="connect-btn">
+                    Let's Connect <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -621,6 +806,15 @@
                 yearElement.textContent = currentYear;
                 yearElement.style.backgroundColor = 'rgba(248, 113, 113, 0.2)';
                 yearElement.style.color = '#f87171';
+            }
+            
+            // Contact form validation simulation
+            const connectBtn = document.querySelector('.connect-btn');
+            if (connectBtn) {
+                connectBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert("Thanks for your interest! I'll get back to you soon.");
+                });
             }
         });
     </script>
