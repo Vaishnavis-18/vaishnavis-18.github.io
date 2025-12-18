@@ -43,9 +43,24 @@ html {
 }
 
 body {
-    background-color: #fff;
-    color: #333;
+    font-size: 18px;
     line-height: 1.6;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.1em;
 }
 
 .container {
@@ -1270,3 +1285,4 @@ footer p {
         margin-top: 10px;
     }
 }
+
