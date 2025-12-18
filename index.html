@@ -227,21 +227,16 @@
                 </div>
                 <div class="contact-form">
                     <!-- Formspree Form -->
-                    <form action="https://formspree.io/f/xykggand" method="POST" id="contactForm">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="_replyto" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        
-                        <!-- Honeypot field to prevent spam -->
-                        <input type="text" name="_gotcha" style="display:none">
-                        
-                        <!-- Redirect after success - NO EXTRA SPACES -->
-                        <input type="hidden" name="_next" value="https://vaishnavis-18.github.io/success.html">
-                        
-                        <!-- Confirmation message -->
-                        <input type="hidden" name="_subject" value="New Portfolio Message: Contact Form">
-                        
-                        <button type="submit" class="btn">Send Message</button>
+                    <form action="https://formsubmit.co/vaishnavisenthilkumar006@gmail.com" method="POST" id="contactForm">
+                          <input type="hidden" name="_next" value="https://vaishnavis-18.github.io/success.html">
+                          <input type="hidden" name="_subject" value="New Portfolio Message: Contact Form">
+                          <input type="hidden" name="_captcha" value="false">
+    
+                          <input type="text" name="name" placeholder="Your Name" required>
+                          <input type="email" name="email" placeholder="Your Email" required>
+                          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    
+                          <button type="submit" class="btn">Send Message</button>
                     </form>
                     
                     <!-- Alternative contact note -->
@@ -270,3 +265,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
