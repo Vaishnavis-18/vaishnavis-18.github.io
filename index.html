@@ -134,51 +134,77 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="project-img-placeholder">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile-responsive design.</p>
-                        <div class="tech-used">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Git</span>
-                            <span>GitHub Pages</span>
-                        </div>
-                        <a href="https://vaishnavis-18.github.io" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+   <!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+        <p class="section-subtitle">Showcasing my development work across different technologies</p>
+        
+        <div class="projects-grid">
+            <!-- Personal Portfolio Website -->
+            <div class="project-card">
+                <div class="project-badge">Completed</div>
+                <div class="project-img">
+                    <div class="project-img-placeholder portfolio-theme">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="project-img-placeholder">
-                            <i class="fas fa-robot"></i>
+                <div class="project-content">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile-responsive design.</p>
+                    <div class="tech-used">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://vaishnavis-18.github.io" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link secondary"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Full Stack Project (Coming Soon) -->
+            <div class="project-card coming-soon">
+                <div class="project-badge coming-soon-badge">Coming Soon</div>
+                <div class="project-img">
+                    <div class="project-img-placeholder fullstack-theme">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Full Stack Web Application</h3>
+                    <p>An innovative full-stack application currently under development. This project will showcase modern web development practices with a complete frontend and backend implementation.</p>
+                    <!-- Tech stack section removed for this project -->
+                    <div class="project-links">
+                        <a href="#" class="project-link disabled"><i class="fas fa-code"></i> In Development</a>
+                        <div class="progress-indicator">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <span>Coming Soon</span>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>AI/ML Project - Coming Soon</h3>
-                        <p>Currently learning machine learning algorithms and data preprocessing. Planning to build a predictive model using Python and Scikit-learn.</p>
-                        <div class="tech-used">
-                            <span>Python</span>
-                            <span>Scikit-learn</span>
-                            <span>Pandas</span>
-                            <span>NumPy</span>
-                        </div>
-                        <a href="#" class="project-link disabled"><i class="fas fa-hourglass-half"></i> In Progress</a>
+                </div>
+                <!-- Overlay for coming soon -->
+                <div class="coming-soon-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-tools"></i>
+                        <h4>Under Development</h4>
+                        <p>Exciting project launching soon! Stay tuned for updates.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Additional project placeholder for future projects -->
+        <div class="more-projects">
+            <p>More projects coming soon... <i class="fas fa-sparkles"></i></p>
+        </div>
+    </div>
+</section>
 
     <!-- Certificates Section -->
     <section id="certificates" class="certificates">
@@ -292,4 +318,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
