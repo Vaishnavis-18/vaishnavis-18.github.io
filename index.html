@@ -17,7 +17,6 @@
             background-color: #0f172a;
             color: #e2e8f0;
             line-height: 1.6;
-            overflow-x: hidden;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -144,18 +143,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-        }
-
-        .profile-img-container {
-            position: relative;
-            width: 350px;
-            height: 350px;
         }
 
         .profile-img {
-            width: 100%;
-            height: 100%;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
             object-fit: cover;
             border: 8px solid rgba(56, 189, 248, 0.2);
@@ -182,6 +174,24 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+
+        .name-container {
+            margin-bottom: 15px;
+        }
+
+        .first-name {
+            font-size: 3.5rem;
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .last-name {
+            font-size: 2.5rem;
+            color: #94a3b8;
+            display: block;
+            line-height: 1;
         }
 
         h2 {
@@ -244,11 +254,9 @@
             transform: translateY(-5px);
         }
 
-        /* Contact Box Section */
+        /* Contact Section */
         .contact-section {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #334155;
+            margin: 60px 0 40px;
         }
 
         .contact-box {
@@ -257,7 +265,7 @@
             padding: 40px;
             border: 1px solid rgba(56, 189, 248, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -285,6 +293,7 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
+            margin-bottom: 30px;
         }
 
         .contact-item {
@@ -343,7 +352,6 @@
             border-radius: 12px;
             font-size: 1.2rem;
             font-weight: 600;
-            margin-top: 30px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
@@ -362,7 +370,7 @@
             background-color: #1e293b;
             border-top: 1px solid #334155;
             padding: 40px 0 20px;
-            margin-top: 80px;
+            margin-top: auto;
         }
 
         .footer-content {
@@ -493,8 +501,16 @@
                 margin-bottom: 50px;
             }
             
-            h1 {
+            .first-name {
                 font-size: 3rem;
+            }
+            
+            .last-name {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
             }
             
             .contact-box {
@@ -523,15 +539,19 @@
                 display: block;
             }
             
-            h1 {
+            .first-name {
                 font-size: 2.5rem;
+            }
+            
+            .last-name {
+                font-size: 1.8rem;
             }
             
             h2 {
                 font-size: 1.5rem;
             }
             
-            .profile-img-container {
+            .profile-img {
                 width: 280px;
                 height: 280px;
             }
@@ -562,11 +582,15 @@
         }
 
         @media (max-width: 576px) {
-            h1 {
+            .first-name {
                 font-size: 2.2rem;
             }
             
-            .profile-img-container {
+            .last-name {
+                font-size: 1.6rem;
+            }
+            
+            .profile-img {
                 width: 250px;
                 height: 250px;
             }
@@ -641,7 +665,12 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <p class="greeting">Hi, I'm</p>
-                <h1>Vaishnavi Senthilkumar</h1>
+                
+                <div class="name-container">
+                    <span class="first-name">Vaishnavi</span>
+                    <span class="last-name">Senthilkumar</span>
+                </div>
+                
                 <h2>AIML Student & Aspiring Developer</h2>
                 <p class="description">
                     B.Tech 2nd Year at <span class="highlight">Bannari Amman Institute of Technology</span> | 
@@ -660,10 +689,8 @@
             </div>
             
             <div class="hero-image">
-                <div class="profile-img-container">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                         alt="Vaishnavi Senthilkumar" class="profile-img">
-                </div>
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                     alt="Vaishnavi Senthilkumar" class="profile-img">
             </div>
         </div>
     </section>
