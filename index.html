@@ -144,6 +144,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
         }
 
         .profile-img {
@@ -154,6 +160,20 @@
             border: 8px solid rgba(56, 189, 248, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             animation: float 3s ease-in-out infinite;
+        }
+
+        .aiml-tag {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            z-index: 2;
         }
 
         @keyframes float {
@@ -179,9 +199,9 @@
 
         h2 {
             font-size: 1.8rem;
-            color: #94a3b8;
+            color: #38bdf8;
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .description {
@@ -235,6 +255,116 @@
         .btn-secondary:hover {
             background-color: rgba(56, 189, 248, 0.1);
             transform: translateY(-5px);
+        }
+
+        /* Contact Box Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: rgba(15, 23, 42, 0.7);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #38bdf8;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, #c084fc);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(192, 132, 252, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .connect-button {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .connect-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
         }
 
         /* Footer Styles */
@@ -420,6 +550,10 @@
                 font-size: 2.2rem;
             }
             
+            .contact-box {
+                padding: 30px;
+            }
+            
             .preparation-section {
                 padding: 15px 20px;
             }
@@ -464,6 +598,14 @@
                 flex-direction: column;
                 gap: 5px;
             }
+            
+            .contact-box {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -479,7 +621,7 @@
                 <li><a href="#">Skills</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Certificates</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             
             <button class="mobile-menu-btn">
@@ -512,8 +654,48 @@
             </div>
             
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                     alt="Vaishnavi Senthilkumar" class="profile-img">
+                <div class="profile-container">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Vaishnavi Senthilkumar" class="profile-img">
+                    <div class="aiml-tag">AIML Student</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-box">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">vaishnavisenthilkumar006@gmail.com</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">7010244595</span>
+                            </div>
+                        </div>
+                        
+                        <a href="mailto:vaishnavisenthilkumar006@gmail.com" class="connect-button">
+                            <i class="fas fa-paper-plane"></i> Let's Connect
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
