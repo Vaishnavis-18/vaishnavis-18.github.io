@@ -76,7 +76,7 @@
                     <div class="info-item">
                         <span>Education:</span>
                         <p>
-                            </strong>B.Tech – Artificial Intelligence and Machine Learning (2024–2028)</strong><br>
+                            <strong>B.Tech – Artificial Intelligence and Machine Learning (2024–2028)</strong><br>
                             Bannari Amman Institute Of Technology
                         </p>
                     </div>
@@ -166,36 +166,36 @@
         </div>
     </section>
 
-<!-- Certificates Section -->
-<section id="certificates" class="certificates">
-    <div class="container">
-        <h2 class="section-title">My <span>Certificates</span></h2>
-        <div class="cert-grid">
-            <div class="cert-card">
-                <div class="cert-icon">
-                    <i class="fab fa-google"></i>
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">My <span>Certificates</span></h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Crash Course on Python</h3>
+                    <p>By Google (Coursera)</p>
+                    <div class="cert-actions">
+                        <a href="python-google-certificate.jpg" target="_blank" class="btn-small">View</a>
+                        <a href="python-google-certificate.jpg" download class="btn-small">Download</a>
+                    </div>
                 </div>
-                <h3>Crash Course on Python</h3>
-                <p>By Google (Coursera)</p>
-                <div class="cert-actions">
-                    <a href="python-google-certificate.jpg" target="_blank" class="btn-small">View</a>
-                    <a href="python-google-certificate.jpg" download class="btn-small">Download</a>
-                </div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <h3>Hackathon Participation</h3>
-                <p>College Level Hackathon</p>
-                <div class="cert-actions">
-                    <a href="hackathon-certificate.jpg" target="_blank" class="btn-small">View</a>
-                    <a href="hackathon-certificate.jpg" download class="btn-small">Download</a>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Hackathon Participation</h3>
+                    <p>College Level Hackathon</p>
+                    <div class="cert-actions">
+                        <a href="hackathon-certificate.jpg" target="_blank" class="btn-small">View</a>
+                        <a href="hackathon-certificate.jpg" download class="btn-small">Download</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -226,12 +226,28 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <!-- Formspree Form -->
+                    <form action="https://formspree.io/f/xykggand" method="POST" id="contactForm">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="_replyto" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        
+                        <!-- Honeypot field to prevent spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- Redirect after success -->
+                        <input type="hidden" name="_next" value="https://vaishnavis-18.github.io/#contact">
+                        
+                        <!-- Confirmation message -->
+                        <input type="hidden" name="_subject" value="New message from portfolio website">
+                        
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                    
+                    <!-- Alternative contact note -->
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                        Or email me directly at: <a href="mailto:vaishnavisenthilkumar006@gmail.com">vaishnavisenthilkumar006@gmail.com</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -253,4 +269,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
