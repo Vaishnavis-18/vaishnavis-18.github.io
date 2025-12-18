@@ -17,10 +17,30 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Form Handling for Formspree
+// Form handling for Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
+        // Get form values for validation
+        const name = this.querySelector('input[name="name"]').value.trim();
+        const email = this.querySelector('input[name="_replyto"]').value.trim();
+        const message = this.querySelector('textarea[name="message"]').value.trim();
+        
+        // Basic validation
+        if (!name || !email || !message) {
+            e.preventDefault();
+            alert('Please fill in all fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
         // Show loading state
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
@@ -30,40 +50,14 @@ if (contactForm) {
         // Add loading class for styling
         submitBtn.classList.add('loading');
         
-        // Validate form before submitting
-        const name = this.querySelector('input[name="name"]').value;
-        const email = this.querySelector('input[name="_replyto"]').value;
-        const message = this.querySelector('textarea[name="message"]').value;
-        
-        if (!name || !email || !message) {
-            e.preventDefault();
-            alert('Please fill in all fields.');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('loading');
-            return;
-        }
-        
-        // Validate email format
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            e.preventDefault();
-            alert('Please enter a valid email address.');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('loading');
-            return;
-        }
-        
-        // Form is valid, let Formspree handle the submission
-        // Reset button after 8 seconds (in case of network issues)
+        // After form submits (or fails), reset button
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
-        }, 8000);
+        }, 5000); // Reset after 5 seconds
         
-        // Optional: Add success message after form redirects back
+        // Form will now submit to Formspree
         // Formspree will handle the actual email sending
     });
 }
@@ -71,8 +65,10 @@ if (contactForm) {
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        // Don't prevent default for links that don't have href="#"
-        if (this.getAttribute('href') === '#') return;
+        // Don't prevent default for links with classes that should work normally
+        if (this.classList.contains('btn') || this.classList.contains('btn-outline') || this.classList.contains('project-link')) {
+            return;
+        }
         
         e.preventDefault();
         
@@ -92,4 +88,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll effect to navbar
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
-    if (
+    if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+    }
+});
+
+// Show success message if redirected from Formspree
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        alert('Thank you! Your message has been sent successfully. I\'ll get back to you soon.');
+    }
+    
+    if (urlParams.get('error') === 'true') {
+        alert('Sorry, there was an error sending your message. Please try again or email me directly.');
+    }
+});
