@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnavi S | AIML Student</title>
+    <title>Vaishnavi S | AIML Student & Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Vaishnavi Senthilkumar - AIML Student at Bannari Amman Institute of Technology. Passionate about AI, Web Development & Problem Solving.">
+    <meta name="keywords" content="AIML Student, Web Developer, Python, Portfolio, Google Internship">
+    <meta name="author" content="Vaishnavi Senthilkumar">
 </head>
 <body>
     <!-- Navigation -->
@@ -21,7 +27,7 @@
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="menu-btn" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -29,21 +35,21 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm <span>Vaishnavi Senthilkumar</span></h1>
+                <h1>Hi, I'm <span class="highlight">Vaishnavi Senthilkumar</span></h1>
                 <h2>AIML Student & Aspiring Developer</h2>
                 <p>B.Tech 2nd Year at Bannari Amman Institute of Technology | Passionate about AI, Web Development & Problem Solving</p>
                 <div class="hero-btns">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn-outline">Contact Me</a>
+                    <a href="#projects" class="btn"><i class="fas fa-code"></i> View My Work</a>
+                    <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
                 </div>
                 <div class="social">
-                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank"><i class="fab fa-linkedin"></i></a>                    
-                    <a href="https://github.com/Vaishnavis-18" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:vaishnavisenthilkumar006@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>                    
+                    <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="my-photo.png" alt="Vaishnavi Photo">
+                <img src="my-photo.png" alt="Vaishnavi Senthilkumar - AIML Student" loading="lazy">
             </div>
         </div>
     </section>
@@ -51,14 +57,14 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About <span>Me</span></h2>
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Hello! I'm Vaishnavi</h3>
                     <p>I'm a passionate 2nd-year B.Tech student specializing in Artificial Intelligence and Machine Learning at Bannari Amman Institute of Technology. I'm enthusiastic about technology, problem-solving, and creating impactful projects.</p>
-                    <p>Currently, I'm building my skills in Python, Web Development, and Data Structures. I believe in continuous learning and growth.</p>
-                    <p><strong>Goal:</strong> To become a proficient AI developer and contribute to innovative tech solutions.</p>
-                    <a href="Resume.pdf" class="btn" download>Download Resume</a>
+                    <p>Currently, I'm building my skills in Python, Web Development, and Data Structures while preparing for opportunities like the Google Internship 2026. I believe in continuous learning and growth.</p>
+                    <p><strong>Goal:</strong> To become a proficient AI developer and contribute to innovative tech solutions at companies like Google.</p>
+                    <a href="Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
                 </div>
                 <div class="about-info">
                     <div class="info-item">
@@ -81,8 +87,8 @@
                         </p>
                     </div>
                     <div class="info-item">
-                        <span>College:</span>
-                        <p>Bannari Amman Institute of Technology</p>
+                        <span>Portfolio:</span>
+                        <p><a href="https://vaishnavis-18.github.io" target="_blank">vaishnavis-18.github.io</a></p>
                     </div>
                 </div>
             </div>
@@ -92,7 +98,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">My <span>Skills</span></h2>
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <i class="fas fa-code"></i>
@@ -102,17 +108,17 @@
                 <div class="skill-card">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript (Learning)</p>
+                    <p>HTML5, CSS3, JavaScript (ES6+)</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-tools"></i>
                     <h3>Tools & Platforms</h3>
-                    <p>VS Code, GitHub, Google Colab</p>
+                    <p>VS Code, Git/GitHub, Google Colab</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-brain"></i>
                     <h3>AI/ML Foundation</h3>
-                    <p>Basic Concepts, Python for AI</p>
+                    <p>Python for AI, Basic ML Concepts</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-users"></i>
@@ -131,35 +137,43 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My <span>Projects</span></h2>
+            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="images/project1.jpg" alt="Portfolio Website">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Personal Portfolio Website</h3>
-                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript to showcase my skills, projects, and achievements.</p>
+                        <p>A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile-responsive design.</p>
                         <div class="tech-used">
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
                             <span>JavaScript</span>
+                            <span>Git</span>
+                            <span>GitHub Pages</span>
                         </div>
-                        <a href="https://vaishnavis-18.github.io" class="project-link">Live Demo</a>
+                        <a href="https://vaishnavis-18.github.io" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <div class="placeholder-img">Coming Soon</div>
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-robot"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>AI/ML Project</h3>
-                        <p>Currently learning and planning my first machine learning project. Will update soon!</p>
+                        <h3>AI/ML Project - Coming Soon</h3>
+                        <p>Currently learning machine learning algorithms and data preprocessing. Planning to build a predictive model using Python and Scikit-learn.</p>
                         <div class="tech-used">
                             <span>Python</span>
                             <span>Scikit-learn</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
                         </div>
-                        <a href="#" class="project-link disabled">In Progress</a>
+                        <a href="#" class="project-link disabled"><i class="fas fa-hourglass-half"></i> In Progress</a>
                     </div>
                 </div>
             </div>
@@ -169,17 +183,17 @@
     <!-- Certificates Section -->
     <section id="certificates" class="certificates">
         <div class="container">
-            <h2 class="section-title">My <span>Certificates</span></h2>
+            <h2 class="section-title">My <span class="highlight">Certificates</span></h2>
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-icon">
                         <i class="fab fa-google"></i>
                     </div>
                     <h3>Crash Course on Python</h3>
-                    <p>By Google (Coursera)</p>
+                    <p>Google (Coursera) | 2024</p>
                     <div class="cert-actions">
-                        <a href="python-google-certificate.jpg" target="_blank" class="btn-small">View</a>
-                        <a href="python-google-certificate.jpg" download class="btn-small">Download</a>
+                        <a href="python-google-certificate.jpg" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                        <a href="python-google-certificate.jpg" download class="btn-small"><i class="fas fa-download"></i> Download</a>
                     </div>
                 </div>
                 <div class="cert-card">
@@ -187,10 +201,10 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3>Hackathon Participation</h3>
-                    <p>College Level Hackathon</p>
+                    <p>College Level | 2024</p>
                     <div class="cert-actions">
-                        <a href="hackathon-certificate.jpg" target="_blank" class="btn-small">View</a>
-                        <a href="hackathon-certificate.jpg" download class="btn-small">Download</a>
+                        <a href="hackathon-certificate.jpg" target="_blank" class="btn-small"><i class="fas fa-eye"></i> View</a>
+                        <a href="hackathon-certificate.jpg" download class="btn-small"><i class="fas fa-download"></i> Download</a>
                     </div>
                 </div>
             </div>
@@ -200,7 +214,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -224,24 +238,31 @@
                             <p>Bannari Amman Institute of Technology, Tamil Nadu</p>
                         </div>
                     </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h3>Portfolio</h3>
+                            <p><a href="https://vaishnavis-18.github.io" target="_blank">vaishnavis-18.github.io</a></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-form">
                     <!-- Formspree Form -->
                     <form action="https://formspree.io/f/xykggand" method="POST" id="contactForm">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="_replyto" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+                        <input type="email" name="_replyto" placeholder="Your Email" required aria-label="Your Email">
+                        <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
                         
                         <!-- Honeypot field to prevent spam -->
-                        <input type="text" name="_gotcha" style="display:none">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                         
-                        <!-- Redirect after success - NO EXTRA SPACES -->
+                        <!-- Redirect after success -->
                         <input type="hidden" name="_next" value="https://vaishnavis-18.github.io/success.html">
                         
                         <!-- Confirmation message -->
                         <input type="hidden" name="_subject" value="New Portfolio Message: Contact Form">
                         
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                     
                     <!-- Alternative contact note -->
@@ -257,13 +278,14 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Vaishnavi S. All Rights Reserved.</p>
-            <p>Built with ❤️ using HTML, CSS & JavaScript</p>
+            <p>&copy; 2024 Vaishnavi Senthilkumar. All Rights Reserved.</p>
+            <p>Built with ❤️ using HTML, CSS & JavaScript | Deployed on GitHub Pages</p>
             <div class="footer-social">
-                <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Vaishnavis-18"><i class="fab fa-github"></i></a>
-                <a href="mailto:vaishnavisenthilkumar006@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
+            <p class="footer-note">Preparing for Google Associate Software Developer Intern 2026</p>
         </div>
     </footer>
 
