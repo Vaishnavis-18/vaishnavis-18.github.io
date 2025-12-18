@@ -47,7 +47,7 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        // Add loading class for styling (if CSS exists)
+        // Add loading class for styling
         submitBtn.classList.add('loading');
         
         // Reset button after 5 seconds (in case of error)
@@ -65,7 +65,10 @@ if (contactForm) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         // Don't prevent default for links with classes that should work normally
-        if (this.classList.contains('btn') || this.classList.contains('btn-outline') || this.classList.contains('project-link')) {
+        if (this.classList.contains('btn') || 
+            this.classList.contains('btn-outline') || 
+            this.classList.contains('project-link') ||
+            this.classList.contains('cert-actions')) {
             return;
         }
         
@@ -89,7 +92,33 @@ window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
         nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        nav.style.backdropFilter = 'blur(10px)';
     } else {
         nav.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+        nav.style.background = 'white';
+        nav.style.backdropFilter = 'none';
     }
+});
+
+// Optional: Add active class to current section in navigation
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
 });
