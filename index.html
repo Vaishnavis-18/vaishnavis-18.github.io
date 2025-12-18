@@ -3,150 +3,747 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnavi S | AIML Student & Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vaishnavi Senthilkumar | AIML Student</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Vaishnavi Senthilkumar - AIML Student at Bannari Amman Institute of Technology. Passionate about AI, Web Development & Problem Solving.">
-    <meta name="keywords" content="AIML Student, Web Developer, Python, Portfolio, Google Internship">
-    <meta name="author" content="Vaishnavi Senthilkumar">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .name-line1 {
+            display: block;
+            color: var(--dark);
+        }
+
+        .name-line2 {
+            display: block;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .personal-info {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--dark);
+            min-width: 100px;
+        }
+
+        .info-value {
+            color: var(--gray);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-list li:before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-status {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            border-radius: 4px;
+        }
+
+        .coming-soon {
+            background-color: var(--secondary);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .certificate-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .certificate-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .certificate-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .contact-details h4 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .footer-text {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-stack {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .preparation {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .preparation h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .preparation p {
+            color: #cbd5e1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- Header & Navigation -->
+    <header>
         <div class="container">
-            <a href="#" class="logo">Vaishnavi<span>S</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-btn" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <nav>
+                <a href="#" class="logo">Vaishnavi<span>S</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span class="highlight">Vaishnavi Senthilkumar</span></h1>
+                    <p class="greeting">Hi, I'm</p>
+                    <h1>
+                        <span class="name-line1">Vaishnavi</span>
+                        <span class="name-line2">Senthilkumar</span>
+                    </h1>
                     <h2>AIML Student & Aspiring Developer</h2>
-                    <p>B.Tech 2nd Year at Bannari Amman Institute of Technology | Passionate about AI, Web Development & Problem Solving</p>
+                    <p class="description">
+                        B.Tech 2nd Year at <strong>Bannari Amman Institute of Technology</strong> | 
+                        Passionate about <strong>AI, Web Development & Problem Solving</strong>
+                    </p>
                     
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn"><i class="fas fa-code"></i> View My Work</a>
-                        <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
-                    </div>
-                    
-                    <!-- Contact Me Box in Hero -->
-                    <div class="contact-box">
-                        <div class="contact-box-header">
-                            <i class="fas fa-paper-plane"></i>
-                            <h3>Get In Touch</h3>
-                        </div>
-                        <div class="contact-box-content">
-                            <div class="contact-info-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>vaishnavisenthilkumar006@gmail.com</span>
-                            </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-phone"></i>
-                                <span>7010244595</span>
-                            </div>
-                            <a href="#contact" class="contact-box-btn">
-                                <i class="fas fa-comments"></i>
-                                Let's Connect
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="social">
-                        <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile">
-                            <i class="fab fa-linkedin"></i>
-                        </a>                    
-                        <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub Profile">
-                            <i class="fab fa-github"></i>
+                    <div class="buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i> View My Work
                         </a>
-                        <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Send Email">
-                            <i class="fas fa-envelope"></i>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Contact Me
                         </a>
                     </div>
                 </div>
                 
-                <!-- Circle Profile Image -->
                 <div class="hero-image">
-                    <div class="profile-circle">
-                        <img src="my-photo.png" alt="Vaishnavi Senthilkumar - AIML Student" loading="lazy">
-                        <div class="profile-badge">
-                            <i class="fas fa-star"></i>
-                            AIML Student
-                        </div>
-                    </div>
-                    <div class="profile-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">2+</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2+</div>
-                            <div class="stat-label">Certificates</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">Skills</div>
-                        </div>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Vaishnavi Senthilkumar" class="profile-img">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know more about me, my background, and my goals</p>
+            </div>
+            
             <div class="about-content">
                 <div class="about-text">
                     <h3>Hello! I'm Vaishnavi</h3>
                     <p>I'm a passionate 2nd-year B.Tech student specializing in Artificial Intelligence and Machine Learning at Bannari Amman Institute of Technology. I'm enthusiastic about technology, problem-solving, and creating impactful projects.</p>
                     <p>Currently, I'm building my skills in Python, Web Development, and Data Structures. I believe in continuous learning and growth.</p>
                     <p><strong>Goal:</strong> To become a proficient AI developer and contribute to innovative tech solutions at companies like Google.</p>
-                    <a href="Resume.pdf" class="btn" download>
+                    
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
-                <div class="about-info">
+                
+                <div class="personal-info">
                     <div class="info-item">
-                        <span>Name:</span>
-                        <p>Vaishnavi Senthilkumar</p>
+                        <span class="info-label">Name:</span>
+                        <span class="info-value">Vaishnavi Senthilkumar</span>
                     </div>
                     <div class="info-item">
-                        <span>Email:</span>
-                        <p>vaishnavisenthilkumar006@gmail.com</p>
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">vaishnavisenthilkumar006@gmail.com</span>
                     </div>
                     <div class="info-item">
-                        <span>Phone:</span>
-                        <p>7010244595</p>
+                        <span class="info-label">Phone:</span>
+                        <span class="info-value">7010244595</span>
                     </div>
                     <div class="info-item">
-                        <span>Education:</span>
-                        <p>
-                            <strong>B.Tech – Artificial Intelligence and Machine Learning (2024–2028)</strong><br>
-                            Bannari Amman Institute Of Technology
-                        </p>
-                    </div>
-                    <div class="info-item">
-                        <span>Portfolio:</span>
-                        <p><a href="https://vaishnavis-18.github.io" target="_blank" class="portfolio-link">vaishnavis-18.github.io</a></p>
+                        <span class="info-label">Education:</span>
+                        <span class="info-value">B.Tech – Artificial Intelligence and Machine Learning (2024–2028)<br>
+                        Bannari Amman Institute Of Technology</span>
                     </div>
                 </div>
             </div>
@@ -154,334 +751,276 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section" style="background-color: #f0f9ff;">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Technologies and tools I work with</p>
+            </div>
+            
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                <div class="skill-category">
                     <h3>Programming</h3>
-                    <p>C, Python, Basic Java</p>
+                    <ul class="skill-list">
+                        <li>C</li>
+                        <li>Python</li>
+                        <li>Basic Java</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
+                
+                <div class="skill-category">
                     <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript (Learning)</p>
+                    <ul class="skill-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript (learning)</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
+                
+                <div class="skill-category">
                     <h3>Tools & Platforms</h3>
-                    <p>VS Code, Git/GitHub, Google Colab</p>
+                    <ul class="skill-list">
+                        <li>VS Code</li>
+                        <li>Git/GitHub</li>
+                        <li>Google Colab</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
+                
+                <div class="skill-category">
                     <h3>AI/ML Foundation</h3>
-                    <p>Python for AI</p>
+                    <ul class="skill-list">
+                        <li>Python for AI</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                
+                <div class="skill-category">
                     <h3>Soft Skills</h3>
-                    <p>Problem-solving, Teamwork, Adaptability</p>
+                    <ul class="skill-list">
+                        <li>Problem-solving</li>
+                        <li>Teamwork</li>
+                        <li>Adaptability</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
+                
+                <div class="skill-category">
                     <h3>Languages</h3>
-                    <p>Tamil (Native), English</p>
+                    <ul class="skill-list">
+                        <li>Tamil (Native)</li>
+                        <li>English</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-                <p class="section-subtitle">Showcasing my development work across different technologies</p>
-                
-                <!-- Status Filter -->
-                <div class="status-filter">
-                    <button class="status-btn active all-theme" data-status="all">
-                        <i class="fas fa-layer-group"></i> All Projects
-                    </button>
-                    <button class="status-btn completed-theme" data-status="completed">
-                        <span class="status-dot completed"></span>
-                        Completed
-                    </button>
-                    <button class="status-btn coming-soon-theme" data-status="coming-soon">
-                        <span class="status-dot coming-soon"></span>
-                        Coming Soon
-                    </button>
-                </div>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Portfolio Website -->
-                <div class="project-card portfolio" data-status="completed">
-                    <div class="project-header">
-                        <div class="project-badge completed">
-                            <i class="fas fa-check-circle"></i>
-                            Completed
-                        </div>
-                        <div class="project-icon-container">
-                            <div class="project-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <div class="project-icon-text">
-                                <h4>Personal Portfolio</h4>
-                                <p>Website</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3 class="project-title">Personal Portfolio Website</h3>
-                        <p class="project-description">
-                            A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile–responsive design.
-                        </p>
-                        
-                        <div class="tech-used">
-                            <div class="tech-tags">
-                                <span class="tech-tag"><i class="fab fa-html5"></i> HTML</span>
-                                <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
-                                <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
-                                <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
-                                <span class="tech-tag"><i class="fab fa-github"></i> GitHub Pages</span>
-                            </div>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://vaishnavis-18.github.io" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Full Stack App -->
-                <div class="project-card fullstack coming-soon" data-status="coming-soon">
-                    <div class="project-header">
-                        <div class="project-badge coming-soon-badge">
-                            <i class="fas fa-clock"></i>
-                            Coming Soon
-                        </div>
-                        <div class="project-icon-container">
-                            <div class="project-icon">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <div class="project-icon-text">
-                                <h4>Full Stack Web</h4>
-                                <p>Application</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-content">
-                        <h3 class="project-title">Full Stack Web Application</h3>
-                        <p class="project-description">
-                            An innovative full-stack application currently under development. This project will showcase modern web development practices with a complete frontend and backend implementation.
-                        </p>
-                        
-                        <div class="coming-soon-status">
-                            <div class="status-content">
-                                <i class="fas fa-tools"></i>
-                                <div class="status-text">
-                                    <span class="status-title">In Development</span>
-                                    <span class="status-subtitle">Stay tuned for updates</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-links">
-                            <button class="project-link disabled" disabled>
-                                <i class="fas fa-hourglass-half"></i>
-                                Coming Soon
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Showcasing my development work across different technologies</p>
             </div>
             
-            <!-- More Projects -->
-            <div class="more-projects-box">
-                <div class="more-projects-content">
-                    <i class="fas fa-sparkles"></i>
-                    <h3>More Projects Coming Soon!</h3>
-                    <p>Stay tuned for more exciting projects and developments.</p>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="coming-soon">Coming Soon</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-category="completed">
+                    <span class="project-status">Completed</span>
+                    <div class="project-content">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile-responsive design.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="coming-soon">
+                    <span class="project-status coming-soon">Coming Soon</span>
+                    <div class="project-content">
+                        <h3>Full Stack Web Application</h3>
+                        <p>An innovative full-stack application currently under development. This project will showcase modern web development practices with a complete frontend and backend implementation.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">In Development</span>
+                            <span class="tech-tag">Stay tuned for updates</span>
+                        </div>
+                        
+                        <p style="font-style: italic; color: var(--secondary); margin-top: 1rem;">
+                            Coming Soon
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="coming-soon">
+                    <span class="project-status coming-soon">Coming Soon</span>
+                    <div class="project-content">
+                        <h3>More Projects Coming Soon!</h3>
+                        <p>Stay tuned for more exciting projects and developments in AI/ML and web development.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Web Development</span>
+                            <span class="tech-tag">Innovation</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="certificates">
+    <section id="certificates" class="section" style="background-color: #f0f9ff;">
         <div class="container">
-            <h2 class="section-title">My <span class="highlight">Certificates</span></h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-card-header">
-                        <div class="cert-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div class="cert-ribbon">
-                            <i class="fas fa-award"></i>
-                        </div>
+            <div class="section-title">
+                <h2>My Certificates</h2>
+                <p>Certifications and achievements in my learning journey</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <h3>Crash Course on Python</h3>
+                    <p>Google (Coursera) | 2024</p>
+                    <div style="margin: 2rem 0;">
+                        <i class="fas fa-certificate" style="font-size: 3rem; color: var(--primary);"></i>
                     </div>
-                    
-                    <div class="cert-card-content">
-                        <h3>Crash Course on Python</h3>
-                        <div class="cert-issuer">
-                            <i class="fas fa-building"></i>
-                            <span>Google (Coursera)</span>
-                        </div>
-                        <div class="cert-date">
-                            <i class="fas fa-calendar"></i>
-                            <span>2024</span>
-                        </div>
-                        <p class="cert-description">
-                            Comprehensive Python programming certificate covering fundamentals and practical applications
-                        </p>
-                    </div>
-                    
-                    <div class="cert-actions">
-                        <a href="python-google-certificate.jpg" target="_blank" class="cert-btn view-btn">
-                            <i class="fas fa-eye"></i>
-                            <span>View Certificate</span>
-                        </a>
-                        <a href="python-google-certificate.jpg" download class="cert-btn download-btn">
-                            <i class="fas fa-download"></i>
-                            <span>Download</span>
-                        </a>
-                    </div>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-card-header">
-                        <div class="cert-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="cert-ribbon">
-                            <i class="fas fa-award"></i>
-                        </div>
+                <div class="certificate-card">
+                    <h3>Hackathon Participation</h3>
+                    <p>College Level | 2024</p>
+                    <div style="margin: 2rem 0;">
+                        <i class="fas fa-trophy" style="font-size: 3rem; color: var(--primary);"></i>
                     </div>
-                    
-                    <div class="cert-card-content">
-                        <h3>Hackathon Participation</h3>
-                        <div class="cert-issuer">
-                            <i class="fas fa-university"></i>
-                            <span>College Level</span>
-                        </div>
-                        <div class="cert-date">
-                            <i class="fas fa-calendar"></i>
-                            <span>2024</span>
-                        </div>
-                        <p class="cert-description">
-                            Participated in college-level hackathon demonstrating problem-solving and coding skills
-                        </p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                
+                <div class="certificate-card">
+                    <h3>More Certificates Coming Soon!</h3>
+                    <p>Continuously learning and adding new certifications</p>
+                    <div style="margin: 2rem 0;">
+                        <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--primary);"></i>
                     </div>
-                    
-                    <div class="cert-actions">
-                        <a href="hackathon-certificate.jpg" target="_blank" class="cert-btn view-btn">
-                            <i class="fas fa-eye"></i>
-                            <span>View Certificate</span>
-                        </a>
-                        <a href="hackathon-certificate.jpg" download class="cert-btn download-btn">
-                            <i class="fas fa-download"></i>
-                            <span>Download</span>
-                        </a>
-                    </div>
+                    <p style="font-style: italic; color: var(--gray);">
+                        Stay tuned for more achievements!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
-            <div class="contact-content">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Feel free to reach out for collaborations or just a friendly hello</p>
+            </div>
+            
+            <div class="contact-container">
                 <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Email</h3>
+                            <h4>Email</h4>
                             <p>vaishnavisenthilkumar006@gmail.com</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Phone</h3>
+                            <h4>Phone</h4>
                             <p>7010244595</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Location</h3>
+                            <h4>Location</h4>
                             <p>Bannari Amman Institute of Technology, Tamil Nadu</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-globe"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Portfolio</h3>
-                            <p><a href="https://vaishnavis-18.github.io" target="_blank" class="portfolio-link">vaishnavis-18.github.io</a></p>
+                            <h4>Portfolio</h4>
+                            <p>vaishnavis-18.github.io</p>
                         </div>
+                    </div>
+                    
+                    <div class="preparation" style="margin-top: 2rem; padding: 1rem; background-color: rgba(37, 99, 235, 0.1); border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Preparing for Google Associate Software Developer Intern 2026</h4>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Aspiring to secure an internship at Google for Summer 2026</p>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/xykggand" method="POST" id="contactForm">
+                    <h3 style="margin-bottom: 1.5rem;">Send me a message</h3>
+                    
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="_replyto" placeholder="Your Email" required aria-label="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
                         </div>
                         
-                        <!-- Honeypot field -->
-                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
                         
-                        <!-- Redirect after success -->
-                        <input type="hidden" name="_next" value="https://vaishnavis-18.github.io/success.html">
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
+                        </div>
                         
-                        <!-- Confirmation message -->
-                        <input type="hidden" name="_subject" value="New Portfolio Message: Contact Form">
-                        
-                        <button type="submit" class="btn">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
                     </form>
                     
-                    <p class="alternative-contact">
-                        <i class="fas fa-envelope"></i>
-                        Or email directly: <a href="mailto:vaishnavisenthilkumar006@gmail.com">vaishnavisenthilkumar006@gmail.com</a>
-                    </p>
+                    <div style="margin-top: 2rem; padding: 1rem; background-color: #f8fafc; border-radius: 8px; border-left: 4px solid var(--primary);">
+                        <p style="color: var(--gray); font-size: 0.9rem;">
+                            <i class="fas fa-envelope" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                            Or email directly: vaishnavisenthilkumar006@gmail.com
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -491,136 +1030,128 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">Vaishnavi<span>S</span></div>
-                    <p>AIML Student & Aspiring Developer passionate about creating impactful technology solutions</p>
-                </div>
+                <div class="footer-logo">TAU</div>
                 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
+                <p class="footer-text">
+                    © 2024 Vaishnavi Senthilkumar. All Rights Reserved.
+                </p>
                 
-                <div class="footer-social-section">
-                    <h4>Connect With Me</h4>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
+                <p class="tech-stack">
+                    Built with <i class="fas fa-heart" style="color: #f87171;"></i> using 
+                    <strong>HTML, CSS & JavaScript</strong> | Deployed on <strong>GitHub Pages</strong>
+                </p>
+                
+                <div class="preparation">
+                    <h4>Preparing for Google Associate Software Developer Intern 2026</h4>
+                    <p>Aspiring to secure an internship at Google for Summer 2026</p>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2024 Vaishnavi Senthilkumar. All Rights Reserved.</p>
-                <p class="footer-note">
-                    <i class="fas fa-code"></i>
-                    Built with ❤️ using HTML, CSS & JavaScript | Deployed on GitHub Pages
-                </p>
-                <p class="footer-goal">
-                    <i class="fab fa-google"></i>
-                    Preparing for Google Associate Software Developer Intern 2026
-                </p>
+            <div class="copyright">
+                <p>Vaishnavi Senthilkumar | AIML Student & Aspiring Developer</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Navigation Toggle
-            const menuBtn = document.querySelector('.menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (menuBtn) {
-                menuBtn.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    menuBtn.innerHTML = navLinks.classList.contains('active') 
-                        ? '<i class="fas fa-times"></i>' 
-                        : '<i class="fas fa-bars"></i>';
-                });
-            }
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
                     navLinks.classList.remove('active');
-                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-
-            // Project Status Filter
-            const statusBtns = document.querySelectorAll('.status-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            statusBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    statusBtns.forEach(b => b.classList.remove('active'));
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const status = this.dataset.status;
-                    
-                    // Show/hide projects based on status
-                    projectCards.forEach(card => {
-                        if (status === 'all' || card.dataset.status === status) {
-                            card.style.display = 'flex';
-                            card.style.animation = 'fadeIn 0.5s ease forwards';
-                        } else {
-                            card.style.display = 'none';
-                        }
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
-                });
+                }
             });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+        });
+        
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
                     }
                 });
             });
-
-            // Form submission handling
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    submitBtn.classList.add('loading');
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    
-                    // Form will be submitted to Formspree
-                });
-            }
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Add scroll effect for navbar
-            window.addEventListener('scroll', function() {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (name && email && message) {
+                // Show success message
+                alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
+                
+                // Reset form
+                contactForm.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+        
+        // Active Navigation Link on Scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
                 }
             });
         });
