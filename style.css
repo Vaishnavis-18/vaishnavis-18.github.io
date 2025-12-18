@@ -659,10 +659,10 @@ footer p {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
 }
-/* Loading button state */
+/* Loading button animation */
 .btn.loading {
     position: relative;
-    color: transparent;
+    color: transparent !important;
 }
 
 .btn.loading::after {
@@ -683,4 +683,20 @@ footer p {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* Optional: Active navigation link styling */
+.nav-links a.active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+/* Glass effect for navbar on scroll */
+nav {
+    transition: all 0.3s ease;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 
