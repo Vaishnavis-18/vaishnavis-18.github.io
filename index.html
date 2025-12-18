@@ -43,7 +43,7 @@
                     <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
                 </div>
                 <div class="social">
-                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>                    
+                    <a href="https://www.linkedin.com/in/vaishnavi-s-94a411339/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-likedin"></i></a>                    
                     <a href="https://github.com/Vaishnavis-18" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
                     <a href="mailto:vaishnavisenthilkumar006@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -141,16 +141,16 @@
             <h2 class="section-title">My <span class="highlight">Projects</span></h2>
             <p class="section-subtitle">Showcasing my development work across different technologies</p>
             
-            <!-- Status Filter -->
+            <!-- Status Filter with Theme Colors -->
             <div class="status-filter">
-                <button class="status-btn active" data-status="all">
+                <button class="status-btn active all-theme" data-status="all">
                     <i class="fas fa-layer-group"></i> All Projects
                 </button>
-                <button class="status-btn" data-status="completed">
+                <button class="status-btn completed-theme" data-status="completed">
                     <span class="status-dot completed"></span>
                     Completed
                 </button>
-                <button class="status-btn" data-status="coming-soon">
+                <button class="status-btn coming-soon-theme" data-status="coming-soon">
                     <span class="status-dot coming-soon"></span>
                     Coming Soon
                 </button>
@@ -173,7 +173,7 @@
                 <div class="project-content">
                     <h3 class="project-title">Personal Portfolio Website</h3>
                     <p class="project-description">
-                        A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile-responsive design.
+                        A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and achievements. Features Formspree contact form, certificate showcase, and mobile–responsive design.
                     </p>
                     
                     <div class="tech-used">
@@ -220,18 +220,21 @@
                         An innovative full-stack application currently under development. This project will showcase modern web development practices with a complete frontend and backend implementation.
                     </p>
                     
-                    <!-- Progress Indicator -->
-                    <div class="progress-indicator">
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
+                    <!-- Coming Soon Status -->
+                    <div class="coming-soon-status">
+                        <div class="status-content">
+                            <i class="fas fa-tools"></i>
+                            <div class="status-text">
+                                <span class="status-title">In Development</span>
+                                <span class="status-subtitle">Stay tuned for updates</span>
+                            </div>
                         </div>
-                        <span>In Development • 65% Complete</span>
                     </div>
                     
                     <div class="project-links">
                         <button class="project-link disabled" disabled>
-                            <i class="fas fa-lock"></i>
-                            Preview Coming Soon
+                            <i class="fas fa-hourglass-half"></i>
+                            Coming Soon
                         </button>
                     </div>
                 </div>
@@ -239,9 +242,9 @@
                 <!-- Overlay for coming soon -->
                 <div class="coming-soon-overlay">
                     <div class="overlay-content">
-                        <i class="fas fa-tools"></i>
-                        <h4>Under Development</h4>
-                        <p>Exciting project launching soon! Stay tuned for updates.</p>
+                        <i class="fas fa-rocket"></i>
+                        <h4>Project Launching Soon</h4>
+                        <p>Exciting full-stack application coming soon!</p>
                     </div>
                 </div>
                 
@@ -250,12 +253,14 @@
             </div>
         </div>
         
-        <!-- View More Button -->
-        <div class="view-more">
-            <button class="view-more-btn">
-                <span>View More Projects</span>
-                <i class="fas fa-arrow-down"></i>
-            </button>
+        <!-- More Projects Box with Theme Color -->
+        <div class="more-projects-box">
+            <div class="more-projects-content">
+                <i class="fas fa-sparkles"></i>
+                <h3>More Projects Coming Soon!</h3>
+                <p>Stay tuned for more exciting projects and developments.</p>
+                <div class="more-projects-wave"></div>
+            </div>
         </div>
     </div>
 </section>
@@ -369,6 +374,209 @@
         </div>
     </footer>
 
+    <!-- Add CSS for new elements -->
+    <style>
+        /* Theme Colors for Filter Buttons */
+        .status-btn {
+            padding: 10px 25px;
+            border: 2px solid transparent;
+            background: white;
+            color: #4a5568;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-btn.active {
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .all-theme {
+            border-color: #6c63ff;
+            color: #6c63ff;
+        }
+        
+        .all-theme.active {
+            background: linear-gradient(135deg, #6c63ff, #4a44c6);
+        }
+        
+        .completed-theme {
+            border-color: #10b981;
+            color: #10b981;
+        }
+        
+        .completed-theme.active {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .coming-soon-theme {
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+        
+        .coming-soon-theme.active {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .status-btn:hover:not(.active) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .status-dot.completed {
+            background: #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+        
+        .status-dot.coming-soon {
+            background: #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+        
+        /* Coming Soon Status Box */
+        .coming-soon-status {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        
+        .status-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .status-content i {
+            font-size: 1.8rem;
+            color: #f59e0b;
+        }
+        
+        .status-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .status-title {
+            font-weight: 600;
+            color: #2a2a3c;
+            font-size: 1.1rem;
+        }
+        
+        .status-subtitle {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        /* More Projects Box with Theme Color */
+        .more-projects-box {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(74, 68, 198, 0.05));
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .more-projects-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .more-projects-content i {
+            font-size: 3rem;
+            color: #6c63ff;
+            margin-bottom: 20px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        .more-projects-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2a2a3c;
+        }
+        
+        .more-projects-content p {
+            color: #6c757d;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .more-projects-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(90deg, transparent, #6c63ff, transparent);
+            opacity: 0.3;
+            animation: wave 3s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        /* Updated Coming Soon Button */
+        .project-link.disabled {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            cursor: not-allowed;
+            border: none;
+        }
+        
+        .project-link.disabled i {
+            margin-right: 8px;
+        }
+        
+        /* Responsive Design for Filter Buttons */
+        @media (max-width: 768px) {
+            .status-filter {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .status-btn {
+                width: 200px;
+                justify-content: center;
+            }
+            
+            .more-projects-box {
+                padding: 30px 20px;
+            }
+            
+            .more-projects-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
     <!-- Add this script for interactive features -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -419,18 +627,6 @@
                 });
             });
 
-            // View More Button Animation
-            const viewMoreBtn = document.querySelector('.view-more-btn');
-            if (viewMoreBtn) {
-                viewMoreBtn.addEventListener('click', function() {
-                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-                    setTimeout(() => {
-                        this.innerHTML = '<span>More Projects Coming Soon!</span><i class="fas fa-sparkles"></i>';
-                        this.classList.add('disabled');
-                    }, 1500);
-                });
-            }
-
             // Add smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -458,14 +654,14 @@
                 }
                 
                 .portfolio-link {
-                    color: var(--portfolio-primary);
+                    color: #6366f1;
                     text-decoration: none;
                     font-weight: 500;
                     transition: color 0.3s ease;
                 }
                 
                 .portfolio-link:hover {
-                    color: var(--portfolio-secondary);
+                    color: #4a44c6;
                     text-decoration: underline;
                 }
             `;
