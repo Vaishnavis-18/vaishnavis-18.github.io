@@ -6,7 +6,7 @@
     <title>Vaishnavi S | AIML Student & Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- Meta tags for SEO -->
@@ -165,8 +165,14 @@
                         <i class="fas fa-check-circle"></i>
                         Completed
                     </div>
-                    <div class="project-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="project-icon-container">
+                        <div class="project-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="project-icon-text">
+                            <h4>Personal Portfolio</h4>
+                            <p>Website</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -205,8 +211,14 @@
                         <i class="fas fa-clock"></i>
                         Coming Soon
                     </div>
-                    <div class="project-icon">
-                        <i class="fas fa-layer-group"></i>
+                    <div class="project-icon-container">
+                        <div class="project-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="project-icon-text">
+                            <h4>Full Stack Web</h4>
+                            <p>Application</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -347,7 +359,7 @@
                     </form>
                     
                     <!-- Alternative contact note -->
-                    <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    <p class="alternative-contact">
                         <i class="fas fa-envelope"></i>
                         Or email directly: <a href="mailto:vaishnavisenthilkumar006@gmail.com">vaishnavisenthilkumar006@gmail.com</a>
                     </p>
@@ -370,7 +382,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for interactive features -->
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Navigation Toggle
@@ -420,7 +432,7 @@
                 });
             });
 
-            // Add smooth scrolling for anchor links
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -452,7 +464,7 @@
             }
         });
 
-        // Add scroll effect for navbar
+        // Scroll effect for navbar
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
